@@ -20,6 +20,11 @@ namespace ImageViewer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ShowImage();
+        }
+
+        private void ShowImage()
+        {
             this.picImg.Image = this.imgList.Images[this.ImgCount];
             this.lblNum.Text = (this.ImgCount + 1) + "/" + this.imgList.Images.Count;
         }
@@ -31,8 +36,7 @@ namespace ImageViewer
             {
                 this.ImgCount = 0;
             }
-            this.picImg.Image = (Image)this.imgList.Images[this.ImgCount];
-            this.lblNum.Text = (this.ImgCount + 1) + "/" + this.imgList.Images.Count;
+            ShowImage();
         }
 
         private void BtnPrev_Click(object sender, EventArgs e)
@@ -42,8 +46,7 @@ namespace ImageViewer
             {
                 this.ImgCount = this.imgList.Images.Count - 1;
             }
-            this.picImg.Image = (Image)this.imgList.Images[this.ImgCount];
-            this.lblNum.Text = (this.ImgCount + 1) + "/" + this.imgList.Images.Count;
+            ShowImage();
         }
     }
 }
